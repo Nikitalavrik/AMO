@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Laboratory work 1</h1>
+        <p>
+            <h2 class="text-center">Part 1</h2>
+        <h2>Y1 = 2cos(bc/2) + 2sin(cb/2)</h1>
+            <p></p>
+        <form action="{% url "lab1_part1" %}" id="lab1_part1" method="POST">
+            {% csrf_token %}
+            {{ form1.as_p }}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+        <div id="answerL1P1"></div>
+
+        <h2 class="text-center">Part 2</h2>
+        <img class="img-responsive" src="{% static '1.png' %}" alt="">
+        <p></p>
+        <form action="{% url "lab1_part2" %}" id="lab1_part2" method="POST">
+                {% csrf_token %}
+                {{ form2.as_p }}
+                <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+        <div id="answerL1P2"></div>
+
+        <h2 class="text-center">Part 3</h2>
+        <img class="img-responsive" src="{% static '3.png' %}" alt="">
+        <p></p>
+        <form action="{% url "lab1_part3" %}" id="lab1_part3" method="POST">
+                {% csrf_token %}
+                {{ form3.as_p }}
+                <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+        <div id="answerL1P3"></div>
+        </p>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

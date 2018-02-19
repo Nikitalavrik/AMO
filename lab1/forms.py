@@ -4,7 +4,7 @@ from django import forms
 class Part1(forms.Form):
     b = forms.FloatField()
     c = forms.FloatField()
-    fromFile = forms.BooleanField()
+    fromFile = forms.BooleanField(required = False)
     file = forms.FileField(required = False)
 
 class Part2(forms.Form):
@@ -16,7 +16,7 @@ class Part2(forms.Form):
     f = forms.FloatField()
     v = forms.FloatField()
     c = forms.FloatField()
-    fromFile = forms.BooleanField()
+    fromFile = forms.BooleanField(required = False)
     file = forms.FileField(required = False)
 
 class Part3(forms.Form):
@@ -24,5 +24,5 @@ class Part3(forms.Form):
     c = forms.CharField(required = False)
     f = forms.CharField(required = False)
     g = forms.CharField(required = False)
-    fromFile = forms.BooleanField()
+    fromFile = forms.BooleanField(required = False)
     file = forms.FileField(required = False)

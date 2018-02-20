@@ -17,10 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from menu.views import homepage
 from lab1.views import laboratory1,part1,part2,part3
+from lab2.views import laboratory2, lab2_exec
 
 urlpatterns = [
     url(r'^$',homepage, name="homepage"),
     url(r'^lab1/',laboratory1, name="lab1"),
+    url(r'^lab2/',laboratory2, name="lab2"),
+    url(r'^lab2_exec/',lab2_exec, name="lab2_exec"),
     url(r'^lab1_part1/',part1, name="lab1_part1"),
     url(r'^lab1_part2/',part2, name="lab1_part2"),
     url(r'^lab1_part3/',part3, name="lab1_part3"),

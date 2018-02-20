@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block content %}
+{% load staticfiles %}
+<link rel="stylesheet" href={{cdn_css | safe}} type="text/css" />
+<script type="text/javascript" src={{cdn_js | safe}}></script>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Laboratory work 2</h1>
+        <h3>Output:</h3>
+        
+
+        <h3><div class="text-success">{{ answer }}</div></h3>
+        <p></p>
+        <p></p>
+        {{ script | safe }}
+        <div class="img-responsive">{{ div | safe }}</div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}  

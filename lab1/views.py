@@ -69,8 +69,8 @@ def part3(request):
                 Y3 += a[i]**2 +56*c[i]*math.sqrt(f[i]*g[i])
 
             Y3 = round(Y3,5)
-        except Exception as err:
-            Y3 = "length of values not equal " + str(err)
+        except:
+            Y3 = "length of values not equal or SQRT < 0"
         return HttpResponse(Y3)
 
     return render_to_response('lab1', RequestContext(request))

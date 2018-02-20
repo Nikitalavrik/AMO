@@ -18,4 +18,5 @@ $('#lab1_part3').submit(function(e){
         $('#answerL1P3').html("Answer : " + data.toString())
     });
     e.preventDefault();
-    });
+});
+

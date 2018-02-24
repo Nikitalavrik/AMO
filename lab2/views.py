@@ -23,17 +23,20 @@ def lab2_exec(request):
 
         if request.POST['Yours_list'] != '':
             your_list = list(map(int,request.POST['Yours_list'].split(",")))    
+            not_sorted = "Not Sorted :" + str(your_list[::])
             mergeSort(your_list)
-            answer = str(your_list)
+            answer = "Sorted :" + str(your_list)
             templ['answer'] = answer
+            templ['notanswer'] = not_sorted
 
 
         if 'Random_list' in request.POST.keys() and request.POST['Yours_list'] == '':
             rand_list = [random.randint(0,100) for i in range(random.randint(0,100))]
+            not_sorted = "Not Sorted :" + str(rand_list[::])
             mergeSort(rand_list)
-            rand_list = str(rand_list)
+            rand_list = "Sorted :" + str(rand_list)
             templ['answer'] = rand_list
-
+            templ['notanswer'] = not_sorted
 
         if 'Experiment' in request.POST.keys():
 
@@ -62,5 +65,15 @@ def lab2_exec(request):
             templ['div'] = div
             templ['cdn_js'] = cdn_js
             templ['cdn_css'] = cdn_css
-        
+            
+        if 'Fromfile' in request.POST.keys():
+            file = "templates/5.txt"
+            with open(file,'r') as fs:
+                your_list = list(map(int,fs.readline().split(",")))
+                not_sorted = "Not Sorted :" + str(your_list[::])
+                mergeSort(your_list)
+                answer = "Sorted :" + str(your_list)
+                templ['answer'] = answer
+                templ['notanswer'] = not_sorted
+
         return render(request, "lab2_plot.html", templ)

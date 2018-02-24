@@ -1,12 +1,13 @@
+import math
 import random
 
+file = "templates/lab3.txt"
+x = [i*0.1 for i in range(100)]
+y = [math.exp(math.sin(i)) for i in x]
+x = str(x)
+y = str(y)
+with open(file, 'w') as f:
+    f.write(x[1:len(x)-1] + '\n' + y[1:len(y)-1])
 
-file = "5.txt"
-x = [20,70,300,600,800,1500,2000,2500,3000,5000]
-
-with open(file,"a") as f:
-    for i in x:
-        inp = str([random.randint(0,100) for j in range(i+1)])
-        f.writelines(inp[1:len(inp)-1] + '\n')
 
 

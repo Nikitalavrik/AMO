@@ -45,8 +45,8 @@ def merge10Massive():
 
             a = list(map(float,fs.readline().split(",")))
             t1 = time.time()
+            
             mergeSort(a)
             t = time.time() - t1
             y.append(t)
     return x,y
-merge10Massive()

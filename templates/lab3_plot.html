@@ -10,12 +10,23 @@
         <h3>Output:</h3>
         
 
-        <h3><div class="text-success">{{ notanswer }}</div></h3>
+        <h3><div class="text-success">cos(2*x+x**2)</div></h3>
         <p></p>
-        <h3><div class="text-success">{{ answer }}</div></h3>
+        <h3><div class="text-danger">{{ lagrange }}</div></h3>
         <p></p>
-        {{ script | safe }}
-        <div class="img-responsive">{{ div | safe }}</div>
+        <h3><div class="text-success">{{ newton }}</div></h3>
+        <p></p>
+        <h3><div class="text-info">{{ eitken }}</div></h3>
+        <p></p>
+        {{ script1 | safe }}
+        <div class="img-responsive">{{ div1 | safe }}</div>
+        {{ script2 | safe }}
+        <div class="img-responsive">{{ div2 | safe }}</div>
+        {{ script3 | safe }}
+        <div class="img-responsive">{{ div3 | safe }}</div>
+        {{ script4 | safe }}
+        <div class="img-responsive">{{ div4 | safe }}</div>
+
     </div>
 
 </div>

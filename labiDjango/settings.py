@@ -19,9 +19,10 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
+SECRET_KEY = '=$(pzv537**+w1=sfop0o7k#)!8!lsxj7*bi97&8-*@*d75@k$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = []

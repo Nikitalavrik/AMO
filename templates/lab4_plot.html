@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block content %}
+{% load staticfiles %}
+<link rel="stylesheet" href={{cdn_css | safe}} />
+<script type="text/javascript" src={{cdn_js | safe}}></script>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Laboratory work 4</h1>
+        <h3>Output:</h3>
+        
+
+        <h3><div class="text-success">x^2-cos(pi*x)=0</div></h3>
+        <p></p>
+        <h3><div class="text-danger">X : {{ x }}</div></h3>
+        <p></p>
+        <h3><div class="text-info">Y : {{ y }}</div></h3>
+        <p></p>
+        {{ script | safe }}
+        <div class="img-responsive">{{ div | safe }}</div>
+
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}  

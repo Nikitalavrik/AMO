@@ -15,6 +15,9 @@ def lab3_exec(request):
     if request.POST:
         
         templ = {}
+        xt = [round(x*0.01,3) for x in range(100)]
+        fpt = [math.cos(2*x+x**2) for x in xt]
+
         xp = [round(x*0.1,2) for x in range(12)]
         fp = [math.cos(2*x+x**2) for x in xp]
         inter = Interpolation()
@@ -23,8 +26,9 @@ def lab3_exec(request):
         if 'lagrange' in request.POST.keys():
 
             fpl = [lagrange(x,xp[0:10],fp[0:10]) for x in xp[0:10]]
+            fplt = [lagrange(x,xt,fpt) for x in xt]
             lagran_flat = [inter.flat(lagrange,x,xp,fp,10) for x in xp]
-            templ['lagrange'] ="Lagrange : " +  str(fpl)
+            templ['lagrange'] ="Lagrange : " +  str(fpl[:3])
 
         if 'Newton' in request.POST.keys():
             
@@ -49,7 +53,7 @@ def lab3_exec(request):
 
 
             if fpl:
-                plot.line(xp[0:len(fpl)], fpl,line_width = 4, line_color = "red")
+                plot.line(xt[::10], fplt[::10],line_width = 4, line_color = "red")
                 script2,div2 = generate_plot("Lagrange Flat",xp,lagran_flat)
                 templ['script2'] = script2
                 templ['div2'] = div2

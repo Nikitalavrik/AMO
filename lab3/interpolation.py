@@ -56,9 +56,6 @@ class Interpolation:
 
   def flat(self, func, x, xarr, y,n):
     l = []
-    #for i in range(2,12):
-     # n1 = func(x,xarr[0:i],y[0:i]) - func(x,xarr[0:i+1],y[0:i+1])
-     # l.append(- math.log(abs(n1),10) if n1 != 0 else n1)
     for j in range(2,n):
       
       x = (x-j*math.pi/(2*n))/((j+1)*math.pi/(2*n) - j*math.pi/(2*n))

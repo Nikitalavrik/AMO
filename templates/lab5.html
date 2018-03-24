@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'style/site.css' %}">
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center">Laboratory work 5</h1>
+        <p></p>
+        <h3><div class="text-success"></div></h3>
+        <p></p>
+        <p></p>
+        <form action="{% url 'lab5_exec' %}" id="lab5_exec" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if not request.POST %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+            {% endif %}
+        </form>
+
+        <div class="enter_matrix">
+            <h3>{{ enter_matrix }}</h3>
+            <p></p>    
+            {% for i in row %}
+            <p></p>
+            <input type="text">
+            {% endfor %}
+            <p></p>
+            {% if request.POST %}
+            <input type="submit" class="btn btn-primary container" value="Submit" id="lab5_exec_button">
+            {% endif %}</div>
+
+        <p></p>
+        <p></p>
+        <div id="answerL5"></div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

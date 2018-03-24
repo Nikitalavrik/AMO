@@ -1,0 +1,34 @@
+#matrix {
+    margin-top: 15px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+#answerL5 {
+    font-size: 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#x_array {
+    font-size: 20px;
+    color: blue;
+    margin-top: 50px;
+}
+
+.enter_matrix {
+    width: 213px;
+    margin: auto;
+    text-align: center;
+
+}
+
+.enter_matrix input {
+    font-size:  20px;
+    width: 213px;
+}
